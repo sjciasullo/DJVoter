@@ -60,7 +60,17 @@ the songs go on.
 
 
 ## Wireframes
-{insert links here}
+### Menu-> djLogin
+[Menu-> djLogin](./assets/wireframes/main>djlogin.JPG)
+[Menu-> djLogin](./assets/wireframes/main>djlogin+register.JPG)
+### Login>profile
+[login-> profile](./assets/wireframes/djlogin>profile2.JPG)
+### Menu-> rooms
+[Menu-> rooms](./assets/wireframes/main>rooms.JPG)
+### rooms-> player
+[Menu-> djLogin](./assets/wireframes/rooms>player.JPG)
+
+
 
 ## Workflow
 1. check setup
@@ -89,7 +99,14 @@ the songs go on.
       3. something that holds all of the next_song options and their number of votes
       4. dj view
          1. their collection on the right in a scrollable box
-         2. do they have a click-able screen where their library pulls up from the right over the 
+         2. they have a click-able screen where their library pulls up from the right
+         3. end room button 
+   4. get player working with starter songs
+   5. socket.io
+      1. multiple instances of rooms. each initiated by a dj
+      2. upon creation the room will be added to db
+      3. dj has to end room 
+      4. if dj is not present then pick a random song from 
 
 
 
