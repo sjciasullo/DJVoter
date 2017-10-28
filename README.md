@@ -10,8 +10,8 @@ He can login to his profile, which shows him the songs he has added in order fro
 most to least voted. He can also see a list of songs from his favorited songs on his Soundcloud (checkout his soundcloud https://soundcloud.com/cedric_lee). 
 
 ## Select Song
-Ceddy_ced navigates to the scene, where a song has already been playing by another
-DJ, but there are still options open. He favorite Jam and hopes for the best.
+Ceddy_ced creates a room where his friends can go listen to the music he chooses for 
+them. They then vote .
 
 ## Voting Process
 Listeners have been waiting for Ced to come on the scene, and his song is voted as
@@ -52,12 +52,10 @@ the songs go on.
 - id
 - song_id
 - artist_id
-### do i want a db for the rooms?
+### db for rooms
 - id of the room 
 - name of the room for socket.io
 - name of the creator / creator id
-- 
-
 
 ## Wireframes
 ### Menu-> djLogin
@@ -69,6 +67,29 @@ the songs go on.
 [Menu-> rooms](./assets/wireframes/main>rooms.JPG)
 ### rooms-> player
 [Menu-> djLogin](./assets/wireframes/rooms>player.JPG)
+
+## Views
+### partials
+   - boiler
+   - end
+   - header: 
+      - disc icon for back to home as well
+      - menu button: Home / Rooms / Regist / (login / logout / profile) 
+   - table: will fill with rows and columns, is this flexible to rooms
+   - voter radio form
+
+
+### index
+
+### rooms
+#### room-index
+#### room-show
+
+### auth
+#### auth/login 
+#### auth/register
+#### auth/profile
+
 
 
 
