@@ -7,7 +7,7 @@ He uses his favorite web app, **DJVoter**, to get in touch with his followers.
 
 ## Login
 He can login to his profile, which shows him the songs he has added in order from 
-most to least voted. He can also see a list of songs from his favorited songs on his Soundcloud (checkout his soundcloud https://soundcloud.com/cedric_lee). 
+most to least voted. He can also see a list of songs from his favorited songs on his jamendo (checkout his jamendo https://jamendo.com/cedric_lee). 
 
 ## Select Song
 Ceddy_ced creates a room where his friends can go listen to the music he chooses for 
@@ -29,7 +29,7 @@ the songs go on.
 - Authentication
   - passport, passport-local, bcryptjs
 - Socket.io 
-- Soundcloud API
+- jamendo API
   - Get user favorites
   - stream song
   - search for song
@@ -96,7 +96,7 @@ the songs go on.
 ## Workflow
 1. check setup
    1. setup server
-   2. check soundcloud fetching and api
+   2. check jamendo fetching and api
    3. setup db
 2. mvp
    1. there is a song bank that will stream songs into a player
@@ -106,10 +106,10 @@ the songs go on.
 3. auth
    1. dj's can register and login 
       1. directed to a user page which shows their songs and their favorites
-      from soundcloud
+      from jamendo
       2. link to create a room?
       3. at the user page they can edit their collection via
-      songs from soundcloud -> their favorites or can search or can view their
+      songs from jamendo -> their favorites or can search or can view their
       playlists?
 4. views
    1. index -> djLogin which has register and sign in
