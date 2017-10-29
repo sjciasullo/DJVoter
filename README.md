@@ -43,7 +43,7 @@ the songs go on.
 - password_digest
 ### songs
 - id
-- song_name
+- song_name // if song name exists then just add to user's songs
 - artist_name
 - sc_address
 - times_played
