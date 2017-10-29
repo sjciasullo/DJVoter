@@ -1,16 +1,16 @@
-// DEPENDENCIES  
+// ----------------------DEPENDENCIES----------------------  
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
-    // auth dependencies
+// auth dependencies
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
-// CONFIG APP
+// ---------------------- CONFIG APP ----------------------
 const app = express();
 
 require('dotenv').config();
@@ -20,11 +20,11 @@ app.listen(PORT, ()=> {
   console.log(`Server connected to PORT: ${PORT}`);
 })
 
-    //setup views  
+// setup views  
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-    //middleware
+//middleware
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -39,17 +39,23 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//paths
+//------------------------- paths -------------------------
+//index route
 app.get('/', (req,res) => {
   res.send('hello world');
 })
 
+// about route
 app.get('/about', (req, res) => {
   res.send('make an about page');
 })
 
 //paths to routers here
 //auth router
+app.get('/auth', (req,res) => {
+
+})
+
 //user routes
 //rooms
 
