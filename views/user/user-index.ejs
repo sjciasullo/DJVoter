@@ -3,17 +3,25 @@
 <h2>Welcome, <%= user.dj_name %>.</h2>
 <a href="/user/edit">Edit Profile</a>
 <a href="/user/create">Create Room</a>
-<div>make a left list</div>
-<div>List of Soundcloud Favorites
-  <% for(let favorite of favorites) { %>
-    <div class='row'>
-      <span><img class='art_small' src="<%= favorite.artwork_url %>"></span>
-      <span>Song Name: <%= favorite.song_name %> || </span>
-      <span>Artist: <%= favorite.artist %> || </span>
-      <span>Genre: <%= favorite.genre %></span>
+<div class='profile_columns'>
+  <div class='grid'>make a left list</div>
+  <div class='grid'>List of Soundcloud Favorites
+    <div class = 'row'>
+      <div class='box'>Art</div>
+      <div class='box'>Title</div>
+      <div class='box'>Artist</div>
+      <div class='box'>Genre</div>
     </div>
-    <br>
-  <% } %>
+    <% for(let favorite of favorites) { %>
+      <div class='row'>
+        <div class='box'><img class='art_small' src="<%= favorite.artwork_url %>"></div>
+        <div class='box'> <%= favorite.song_name %> </div>
+        <div class='box'> <%= favorite.artist %>    </div>
+        <div class='box'> <%= favorite.genre %>     </div>
+      </div>
+      <br>
+    <% } %>
+  </div>
 </div>
 
 
