@@ -4,24 +4,13 @@
 <a href="/user/edit">Edit Profile</a>
 <a href="/user/create">Create Room</a>
 <div class='profile_columns'>
-  <div class='grid'>make a left list</div>
+  <div class='grid'>make a left list
+      <% include ../partials/song-grid-header %>
+  </div>
   <div class='grid'>List of Soundcloud Favorites
-    <div class = 'row'>
-      <div class='box'>Action</div>
-      <div class='box'>Art</div>
-      <div class='box'>Title</div>
-      <div class='box'>Artist</div>
-      <div class='box'>Genre</div>
-    </div>
+    <% include ../partials/song-grid-header %>
     <% for(let favorite of favorites) { %>
-      <div class='row'>
-        <div class='box'><button id='add'>+</button><button id='play'>></button></div>
-        <div class='box'><img class='art_small' src="<%= favorite.artwork_url %>"></div>
-        <div class='box'> <%= favorite.song_name %> </div>
-        <div class='box'> <%= favorite.artist %>    </div>
-        <div class='box'> <%= favorite.genre %>     </div>
-      </div>
-      <br>
+      <% include ../partials/row-from-db %>
     <% } %>
   </div>
 </div>
