@@ -12,7 +12,7 @@ usersController.index = (req,res) => {
     auth: (req.user) ? true: false,
     user: req.user,
     bank: "to-do show user's bank",
-    favorites: "to-do show user's favorites"
+    favorites: req.favorites,
   });
 };
 

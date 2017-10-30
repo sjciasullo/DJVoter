@@ -1,3 +1,8 @@
 div {
   border: solid 1px #CCC
 }
+
+.art_small {
+  height: 20px;
+  width: 20px;
+}

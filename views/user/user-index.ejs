@@ -4,6 +4,17 @@
 <a href="/user/edit">Edit Profile</a>
 <a href="/user/create">Create Room</a>
 <div>make a left list</div>
-<div>make a right list of favorites from</div>
+<div>List of Soundcloud Favorites
+  <% for(let favorite of favorites) { %>
+    <div class='row'>
+      <span><img class='art_small' src="<%= favorite.artwork_url %>"></span>
+      <span>Song Name: <%= favorite.song_name %> || </span>
+      <span>Artist: <%= favorite.artist %> || </span>
+      <span>Genre: <%= favorite.genre %></span>
+    </div>
+    <br>
+  <% } %>
+</div>
+
 
 <% include ../partials/end %>
