@@ -9,7 +9,7 @@
   </div>
   <div class='grid'>List of Soundcloud Favorites
     <% include ../partials/song-grid-header %>
-    <% for(let favorite of favorites) { %>
+    <% for(let i = 0; i < favorites.length; i++) { %>
       <% include ../partials/row-from-db %>
     <% } %>
   </div>
