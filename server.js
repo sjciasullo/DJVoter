@@ -40,9 +40,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //------------------------- paths -------------------------
+
+
 //index route
 app.get('/', (req,res) => {
-  res.send('hello world');
+  res.render('index');
 })
 
 // about route
@@ -50,13 +52,14 @@ app.get('/about', (req, res) => {
   res.send('make an about page');
 })
 
+
+
 //paths to routers here
-//auth router
-app.get('/auth', (req,res) => {
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
 
-})
-
-//user routes
 //rooms
 
 app.get('*', (req,res) => {

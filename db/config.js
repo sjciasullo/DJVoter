@@ -4,7 +4,7 @@ const options = {
   },
 };
 
-const pgp = require('pg-promise')(options):
+const pgp = require('pg-promise')(options);
 
 function setDb() {
   if (process.env.NODE_ENV = 'development' || !process.env.NODE_ENV) {
