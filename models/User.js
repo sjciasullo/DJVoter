@@ -15,10 +15,10 @@ User.create = (user) => {
   return db.one(
     `
     INSERT INTO users
-    (username, password_digest, jamendo_name, dj_name)
+    (username, password_digest, soundcloud_name, dj_name)
     VALUES ($1, $2, $3, $4)
     RETURNING *
-    `, [user.username, user.password_digest, user.jamendo_name, user.dj_name]
+    `, [user.username, user.password_digest, user.soundcloud_name, user.dj_name]
   );
 };
 

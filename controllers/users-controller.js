@@ -22,7 +22,7 @@ usersController.create = (req, res) => {
   User.create({
     username: req.body.username,
     password_digest: hash,
-    jamendo_name: req.body.jamendo_name,
+    soundcloud_name: req.body.soundcloud_name,
     dj_name: req.body.dj_name,
   }).then(user => {
     req.login(user, (err) => {
