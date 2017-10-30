@@ -19,6 +19,7 @@ passport.use(
         if (!authHelpers.comparePass(password, user.password_digest)) {
           return done(null,false);
         } else {
+          console.log(`this is the user: ${JSON.stringify(user)}`);
           return done(null, user);
         }
       }).catch(err => {

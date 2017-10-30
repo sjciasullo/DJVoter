@@ -4,12 +4,10 @@ const User = require('../models/user.js');
 const usersController = {};
 
 usersController.index = (req,res) => {
-  res.json({
-    message: 'Put a user profile page on this route',
-    data: {
-      user: req.user,
-    },
-  });
+  //check out the req object that's getting passed to render
+  //console.log(`request: ${JSON.stringify(req.user)}`)
+  //we will want to pass this
+  res.render('./user/user-index', {user: req.user});
 };
 
 usersController.create = (req, res) => {
