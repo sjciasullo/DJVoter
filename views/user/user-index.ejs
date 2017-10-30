@@ -7,6 +7,7 @@
   <div class='grid'>make a left list</div>
   <div class='grid'>List of Soundcloud Favorites
     <div class = 'row'>
+      <div class='box'>Action</div>
       <div class='box'>Art</div>
       <div class='box'>Title</div>
       <div class='box'>Artist</div>
@@ -14,6 +15,7 @@
     </div>
     <% for(let favorite of favorites) { %>
       <div class='row'>
+        <div class='box'><button id='add'>+</button><button id='play'>></button></div>
         <div class='box'><img class='art_small' src="<%= favorite.artwork_url %>"></div>
         <div class='box'> <%= favorite.song_name %> </div>
         <div class='box'> <%= favorite.artist %>    </div>

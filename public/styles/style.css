@@ -11,23 +11,26 @@ div {
 }
 
 .grid {
+  margin: 0px 30px 0px 30px;
   display: column;
   flex-direction: row;
-  /* flex: 1; */
+  flex: 1;
   width: 30vw;
   overflow: scroll;
   height: 50vw;
+  grid-row-gap: 0px;
 }
 
 /* fixme to change the color of rows */
-.row:nth-child(odd) {
+.row:nth-child(even) {
   background-color: #DDD;
 }
 
 .row {
   display: grid;
-  grid-template-columns: 30px minmax(60px,60%) minmax(60px,40%) 40px;
+  grid-template-columns: auto 30px minmax(60px,60%) minmax(60px,30%) minmax(40px, 10%) ;
   white-space: nowrap;
+  
 }
 
 .box {
