@@ -35,4 +35,24 @@ usersController.create = (req, res) => {
   });
 }
 
+usersController.getEdit = (req, res, next) => {
+  res.render('./user/user-edit', {
+    auth: (req.user) ? true: false,
+    user: req.user,
+  })
+}
+
+usersController.update = (req, res) => {
+  User.update({
+    username: req.body.username,
+    soundcloud_name: req.body.soundcloud_name,
+    dj_name: req.body.dj_name,
+  }, req.params.id).then(user => {
+    res.redirect(`/user`);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+}
+
 module.exports = usersController;

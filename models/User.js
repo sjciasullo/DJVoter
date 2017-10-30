@@ -22,4 +22,17 @@ User.create = (user) => {
   );
 };
 
+User.update = (user, userId) => {
+  return db.one(
+    `
+    UPDATE users SET
+    username = $1,
+    soundcloud_name = $2,
+    dj_name = $3
+    WHERE id = $4
+    RETURNING *
+    `, [user.username, user.soundcloud_name, user.dj_name, userId]
+  );
+};
+
 module.exports = User;
