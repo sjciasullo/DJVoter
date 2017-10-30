@@ -6,8 +6,14 @@ const usersController = {};
 usersController.index = (req,res) => {
   //check out the req object that's getting passed to render
   //console.log(`request: ${JSON.stringify(req.user)}`)
-  //we will want to pass this
-  res.render('./user/user-index', {user: req.user});
+  //we will want to pass this some middleware that gets
+  //users songs 
+  res.render('./user/user-index', {
+    auth: (req.user) ? true: false,
+    user: req.user,
+    bank: "to-do show user's bank",
+    favorites: "to-do show user's favorites"
+  });
 };
 
 usersController.create = (req, res) => {
