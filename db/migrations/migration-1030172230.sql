@@ -1,0 +1,5 @@
+ALTER TABLE songs
+RENAME COLUMN audio TO audio_url;
+
+ALTER TABLE songs
+ADD COLUMN genre VARCHAR(255);
