@@ -1,7 +1,7 @@
 <!-- this is looped with i index in favorites -->
 <!-- class i for each row so we can access in dom -->
 <div class='row'>
-    <div class='box <%= i %>'><button class='add'>+</button><button class='play'>></button></div>
+    <div class='box'><button class='add <%= i %>'>+</button><button class='play <%= i %>'>></button></div>
     <div class='box <%= i %>'><img class='art_small' src="<%= favorites[i].artwork_url %>"></div>
     <div class='box <%= i %>'> <%= favorites[i].song_name %> </div>
     <div class='box <%= i %>'> <%= favorites[i].artist %>    </div>
