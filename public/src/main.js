@@ -1,7 +1,7 @@
 console.log('main js is connected!');
 
 function putRowIntoCollection(rowNumber){
-  const rowBoxes = document.getElementsByClassName(`.${rowNumber}`);
+  const rowBoxes = document.getElementsByClassName(`${rowNumber}`);
   //row numbers are the instance of .rowNumber
   fetch('/songs', {
     method: 'POST',
@@ -15,10 +15,11 @@ function putRowIntoCollection(rowNumber){
   }).then(res => res.json())
     .then(json => {
       if (json.complete) {
-        //delete song from 
         //add the song to user's collection
-        //this may allow for duplicates to be added to user collection
-        //still need to implement song router, controller, model for post
+        const user_table = document.getElementsByClassName('grid')[0];
+
+        //this WILL allow for duplicates to be added to user collection
+        
         //then will need to implement song router, controller, model for delete and send a delete message on the click of minus button
         // finally will need to load a sc player upon the play button
         // for each row
@@ -26,6 +27,9 @@ function putRowIntoCollection(rowNumber){
     })
 }
 
+//will be able to just add a deleterowfromcollection
+// ISSUE WITH ADDING ROW... WILL NEED A CLASS SPECIFIC
+// FOR EACH SIDE 
 function grabRowButtons() {
   const addButtons = document.querySelectorAll('.add');
   for(let addButton of addButtons) {
@@ -34,3 +38,5 @@ function grabRowButtons() {
     })
   }
 }
+
+document.addEventListener('DOMContentLoaded', grabRowButtons);
