@@ -5,9 +5,11 @@
 <a href="/user/create">Create Room</a>
 <div class='profile_columns' id='user_songs'>
   <div class='grid'>List of User's Songs
-      <% include ../partials/song-grid-header %>
+    <% let className = 'user' %>
+    <% include ../partials/song-grid-header %>
   </div>
   <div class='grid'>List of Soundcloud Favorites
+    <% className = 'soundcloud' %>
     <% include ../partials/song-grid-header %>
     <% for(let i = 0; i < favorites.length; i++) { %>
       <% include ../partials/row-from-db %>
