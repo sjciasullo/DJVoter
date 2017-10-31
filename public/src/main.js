@@ -14,16 +14,27 @@ function createRowString(artwork_url, song_name, artist_name, genre, sc_url, cla
 function putRowIntoCollection(rowName){
   const rowBoxes = document.getElementsByClassName(`${rowName}`);
   //row numbers are the instance of .rowNumber
-  debugger;
+  
+
+  let body = {
+    song_name: rowBoxes[3].innerHTML,
+    artist_name: rowBoxes[4].innerHTML,
+    audio_url: rowBoxes[6].innerHTML,
+    album_image: rowBoxes[2].innerHTML,
+    genre: rowBoxes[5].innerHTML
+  }
+
+  // let data = new FormData();
+  // debugger;
+  // data.append("json", JSON.stringify(body));
+  
   fetch('/songs', {
     method: 'POST',
-    body: {
-      song_name: rowBoxes[3].innerHTML,
-      artist_name: rowBoxes[4].innerHTML,
-      audio_url: rowBoxes[6].innerHTML,
-      album_image: rowBoxes[2].innerHTML,
-      genre: rowBoxes[5].innerHTML
-    },
+    body: "a=1",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
   }).then(res => res.json())
     .then(json => {
       if (json.complete) {

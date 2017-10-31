@@ -6,7 +6,7 @@ songsController.create = (req, res, next) => {
   //do i have access to the user info ???
   // let's say it already lives on req.user...?
   //check out the req object that's getting passed to render
-  console.log(`request: ${JSON.stringify(req.body)}`)
+  console.log(`foo: ${JSON.stringify(req.body)}`)
   Song.create({
     song_name: req.body.song_name,
     artist_name: req.body.artist_name,
