@@ -37,18 +37,6 @@ Song.relateSongToUser = (song_id, user_id) => {
   )
 }
 
-// Song.destroy = (song_name, user_id) => {
-//   return db.none(
-//     `
-//     DELETE FROM users_songs
-//     WHERE song_id IN 
-//       (SELECT id FROM songs 
-//         WHERE song_name = $1)
-//     AND users_songs.user_id = $2
-//     `, [song_name, user_id]
-//   );
-// }
-
 Song.destroy = (song_name, user_id) => {
   return db.none(
     `
@@ -62,10 +50,5 @@ Song.destroy = (song_name, user_id) => {
     `, [song_name, user_id]
   );
 }
-
-// delete from users_songs
-// where id in (select id from users_songs 
-//             join songs on songs.id = users_songs.song_id
-//             where songs.song_name = $1 )
 
 module.exports = Song;
