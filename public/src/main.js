@@ -2,16 +2,16 @@ console.log('main js is connected!');
 
 function createRowString(artwork_url, song_name, artist_name, genre, sc_url, class_name) {
   return `
-    <div class='box'><button class='add ${class_name}'>+</button><button class='play ${class_name}'>></button></div>
+    <div class='box'><button class='delete ${class_name}'>-</button><button class='play ${class_name}'>></button></div>
     <div class='box ${class_name}'><img class='art_small' src="${artwork_url}"></div>
-    <div class='box ${class_name}'> ${song_name} </div>
-    <div class='box ${class_name}'> ${artist_name}    </div>
-    <div class='box ${class_name}'> ${genre}     </div>
+    <div class='box ${class_name}'>${song_name}</div>
+    <div class='box ${class_name}'>${artist_name}</div>
+    <div class='box ${class_name}'>${genre}</div>
     <div class='${class_name}' style="display: none">${sc_url}</div>
   `;
 }
 
-function putRowIntoCollection(rowName){
+function putRowIntoCollection(rowName) {
   const rowBoxes = document.getElementsByClassName(`${rowName}`);
   //row numbers are the instance of .rowNumber
   let hidden_id = document.getElementById('hidden_user').innerText;
@@ -29,7 +29,6 @@ function putRowIntoCollection(rowName){
     method: 'POST',
     body: JSON.stringify(body),
     headers: {
-      // 'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
   }).then(res => res.json())
@@ -51,6 +50,7 @@ function putRowIntoCollection(rowName){
       newRow.innerHTML = createRowString(art, song, artist, genre, sc_url, className);
       user_table.appendChild(newRow);
 
+      grabDeleteButtons();
       //this WILL allow for duplicates to be added to user collection
 
       //then will need to implement song router, controller, model for delete and send a delete message on the click of minus button
@@ -73,4 +73,37 @@ function grabRowButtons() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', grabRowButtons);
+function deleteRowFromCollection(rowName) {
+  const rowBoxes = document.getElementsByClassName(`${rowName}`);  
+  let hidden_id = document.getElementById('hidden_user').innerText;
+  let body = {
+    song_name: rowBoxes[3].innerHTML,
+    user_id: hidden_id
+  }
+  
+  fetch('/songs', {
+    method: 'DELETE',
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+    .then(json => {
+      //do something but this doesn't matter
+    })
+
+}
+
+function grabDeleteButtons() {
+  const deleteButtons = document.querySelectorAll('.delete');
+  for(let deleteButton of deleteButtons) {
+    deleteButton.addEventListener('click', () => {
+      return deleteRowFromCollection(deleteButton.classList[1]);
+    })
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  grabRowButtons();
+  grabDeleteButtons();
+});

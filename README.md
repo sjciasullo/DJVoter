@@ -98,7 +98,7 @@ the songs go on.
 
 
 ## Workflow
-1. check setup
+1. ~~check setup~~
    ~~1. setup server~~
    ~~2. check soundcloud fetching and api~~
    ~~3. setup db~~

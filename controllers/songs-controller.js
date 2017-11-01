@@ -39,4 +39,21 @@ songsController.createUsersSong = (req, res) => {
     })
 }
 
+songsController.delete = (req, res) => {
+  console.log('song name: ', req.body.song_name);
+  console.log('user id : ', req.body.user_id);
+  Song.destroy(req.body.song_name, req.body.user_id)
+    .then( () => {
+      res.json({
+        completed: true,
+      })
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({
+        err: err,
+        completed: false,
+      });
+    })
+}
+
 module.exports = songsController;
