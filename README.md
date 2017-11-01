@@ -133,7 +133,7 @@ the songs go on.
       4. if dj is not present then pick a random song from 
 
 ## To-Do urgent
-1. function of delete button -> deletes from users_songs
+1. ~~function of delete button -> deletes from users_songs~~
 2. play button plays songs -- oembed sc player
 3. setup room view
    1. have a submit vote button
