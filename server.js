@@ -43,7 +43,6 @@ app.use(passport.session());
 
 //------------------------- paths -------------------------
 
-
 //index route
 app.get('/', (req,res) => {
   res.render('index');
@@ -53,8 +52,6 @@ app.get('/', (req,res) => {
 app.get('/about', (req, res) => {
   res.send('make an about page');
 })
-
-
 
 //paths to routers here
 const authRoutes = require('./routes/auth-routes');

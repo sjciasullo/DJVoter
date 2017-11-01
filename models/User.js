@@ -35,4 +35,15 @@ User.update = (user, userId) => {
   );
 };
 
+User.findUserSongs = (userId) => {
+  return db.manyOrNone(
+    `
+    SELECT * FROM songs
+    JOIN users_songs ON songs.id = users_songs.song_id
+    JOIN users ON users_songs.user_id = users.id
+    WHERE users.id = $1;
+    `, [userId]
+  );
+};
+
 module.exports = User;

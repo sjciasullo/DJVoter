@@ -11,7 +11,7 @@ usersController.index = (req,res) => {
   res.render('./user/user-index', {
     auth: (req.user) ? true: false,
     user: req.user,
-    bank: "to-do show user's bank",
+    bank: req.bank,
     favorites: req.favorites,
   });
 };
@@ -53,6 +53,17 @@ usersController.update = (req, res) => {
     console.log(err);
     res.status(500).json(err);
   })
+}
+
+usersController.getUserSongs = (req, res, next) => {
+  User.findUserSongs(req.user.id)
+    .then(songs => {
+      req.bank = songs;
+      next();
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 }
 
 module.exports = usersController;

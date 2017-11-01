@@ -9,11 +9,16 @@
   <div class='grid'>List of User's Songs
     <% let className = 'user' %>
     <% include ../partials/song-grid-header %>
+    <% let arr = bank %>
+    <% for(let i = 0; i < arr.length; i++) { %>
+      <% include ../partials/row-from-db %>
+    <% } %>
   </div>
   <div class='grid'>List of Soundcloud Favorites
     <% className = 'soundcloud' %>
     <% include ../partials/song-grid-header %>
-    <% for(let i = 0; i < favorites.length; i++) { %>
+    <% arr = favorites %>
+    <% for(let i = 0; i < arr.length; i++) { %>
       <% include ../partials/row-from-db %>
     <% } %>
   </div>
