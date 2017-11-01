@@ -5,11 +5,13 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req,res,next) {
+  console.log('test the auth-helper')
   if(req.user) return res.redirect('/user');
   return next();
 }
 
 function loginRequired(req,res,next) {
+  console.log(`req without user: ${JSON.stringify(req.user)}`)
   if(!req.user) return res.redirect('/auth/login');
   
   return next();

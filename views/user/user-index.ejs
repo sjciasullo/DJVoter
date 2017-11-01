@@ -1,6 +1,8 @@
 <% include ../partials/boiler %>
 
 <h2>Welcome, <%= user.dj_name %>.</h2>
+<h2 style="display: none" id='hidden_user'><%= user.id %></h2>
+
 <a href="/user/edit">Edit Profile</a>
 <a href="/user/create">Create Room</a>
 <div class='profile_columns' id='user_songs'>

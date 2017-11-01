@@ -15,9 +15,7 @@ songsController.create = (req, res, next) => {
     genre: req.body.genre,
     // user_id: req.user.id
   }).then(users_song => {
-    res.locals({
-      users_song: users_song
-    });
+    res.locals.users_song= users_song;
     next();
   }).catch(err => {
     console.log(err);
@@ -29,7 +27,7 @@ songsController.create = (req, res, next) => {
 }
 
 songsController.createUsersSong = (req, res) => {
-  Song.relateSongToUser(res.locals.users_song.id, req.user.id)
+  Song.relateSongToUser(res.locals.users_song.id, req.body.user_id)
     .then(users_song => {
       console.log(users_song);
       res.json({
