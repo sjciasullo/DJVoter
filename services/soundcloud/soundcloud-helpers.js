@@ -8,7 +8,7 @@ function formatFavorites(favoritesArr) {
     favoritesCondensed.push({
       song_name: favorite.title,
       artist: favorite.user.username,
-      artwork_url: favorite.artwork_url,
+      album_image: favorite.artwork_url, //album_image for matching db songs
       genre: favorite.genre,
       sc_url: favorite.permalink_url, //this if use oembed soundcloud widget
       stream_url: favorite.stream_url, //use this if own audio object

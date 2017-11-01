@@ -20,7 +20,7 @@ function putRowIntoCollection(rowName){
     song_name: rowBoxes[3].innerHTML,
     artist_name: rowBoxes[4].innerHTML,
     audio_url: rowBoxes[6].innerHTML,
-    album_image: rowBoxes[2].innerHTML,
+    album_image: rowBoxes[2].childNodes[0].getAttribute("src"),
     genre: rowBoxes[5].innerHTML,
     user_id: hidden_id
   }
