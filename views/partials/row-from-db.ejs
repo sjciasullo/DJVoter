@@ -1,11 +1,18 @@
 <!-- this is looped with i index in favorites -->
 <!-- class i for each row so we can access in dom -->
 <div class='row'>
-    <div class='box'><button class='add <%= className + i %>'>+</button><button class='play <%= className + i %>'>></button></div>
+    <div class='box'>
+        <% if(className == 'user'){%>
+            <button class='delete <%= className + i %>'>-</button>
+        <% } else { %>
+            <button class='add <%= className + i %>'>+</button>
+        <% } %>
+        <button class='play <%= className + i %>'>></button></div>
     <div class='box <%= className + i %>'><img class='art_small' src="<%= arr[i].album_image %>"></div>
     <div class='box <%= className + i %>'> <%= arr[i].song_name %> </div>
-    <div class='box <%= className + i %>'> <%= arr[i].artist %>    </div>
+    <div class='box <%= className + i %>'> <%= arr[i].artist_name %>    </div>
     <div class='box <%= className + i %>'> <%= arr[i].genre %>     </div>
+    <div class='<%= className + i %>' style="display: none"><%= arr[i].sc_url %></div>
     <div class='<%= className + i %>' style="display: none"><%= arr[i].sc_url %></div>
 </div>
 
