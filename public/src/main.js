@@ -81,6 +81,10 @@ function deleteRowFromCollection(rowName) {
     user_id: hidden_id
   }
   
+  let box = rowBoxes[0].parentNode;
+  let row = box.parentNode;
+  row.parentNode.removeChild(row);
+
   fetch('/songs', {
     method: 'DELETE',
     body: JSON.stringify(body),
