@@ -12,6 +12,7 @@ function formatFavorites(favoritesArr) {
       genre: favorite.genre,
       sc_url: favorite.permalink_url, //this if use oembed soundcloud widget
       stream_url: favorite.stream_url, //use this if own audio object
+      uri: favorite.uri, //use this for soundcloud player
     })
   }
   return favoritesCondensed;

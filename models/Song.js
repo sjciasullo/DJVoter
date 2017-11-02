@@ -15,7 +15,7 @@ Song.create = (usersSong) => {
       return db.one(
         `
         INSERT INTO songs 
-        (song_name, artist_name, audio_url, album_image, genre)
+        (song_name, artist_name, uri, album_image, genre)
         VALUES ($1, $2, $3, $4, $5)
         ON CONFLICT (song_name) DO NOTHING 
         RETURNING *
