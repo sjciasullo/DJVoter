@@ -1,12 +1,13 @@
 <% include ../partials/boiler %>
 
-<h2>Welcome, <%= user.dj_name %>.</h2>
+<h2>Welcome, <span><%= user.dj_name %></span></h2>
 <h2 style="display: none" id='hidden_user'><%= user.id %></h2>
-
-<a href="/user/edit">Edit Profile</a>
-<a href="/user/create">Create Room</a>
+<div class='buttons_holder'>
+  <a class='user_buttons' href="/user/edit">Edit Profile</a>
+  <a class='user_buttons' href="/user/create">Create Room</a>
+</div>
 <div class='profile_columns' id='user_songs'>
-  <div class='grid'>List of User's Songs
+  <div class='grid'> <h2>List of User's Songs</h2>
     <% let className = 'user' %>
     <% include ../partials/song-grid-header %>
     <% let arr = bank %>
@@ -14,7 +15,7 @@
       <% include ../partials/row-from-db %>
     <% } %>
   </div>
-  <div class='grid'>List of Soundcloud Favorites
+  <div class='grid'><h2>Soundcloud Favorites</h2>
     <% className = 'soundcloud' %>
     <% include ../partials/song-grid-header %>
     <% arr = favorites %>

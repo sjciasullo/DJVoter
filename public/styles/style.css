@@ -5,43 +5,87 @@ body{
   width: 100vw;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  padding: 10px;
+}
+
 div {
-  border: solid 1px #CCC
+  /* border: solid 1px #CCC */
 }
 
 .main_header {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: underline;
   font-size: 30px;
 }
 
-.main_menu {
+.underline {
+  text-decoration: underline;
+}
+
+.main_menu, .auth_form{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 100px;
 }
 
+.rt_buttons {
+  display: flex;
+  justify-content: space-around;
+  flex: .2;
+}
+
+.auth_form{
+  padding: 0px;
+  height: 50vh;
+}
+
+.auth_form form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30px;
+}
+
+input {
+  margin: 20px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0);
+  color: white;
+  border: none;
+}
+
+input:focus {
+  border-bottom: 2px solid white;
+}
+
+
 a {
   color:white;
   text-decoration: none;
   font-size: 20px;
+  transition: .3s ease;
+  text-align: center;
 }
 
 li {
   padding: 10px;
 }
 
-a:visited{
-  color: white;
+a:visited, .button{
+  color: rgb(255, 255, 255);
   transition: .5s ease;
 }
 
-a:hover{
+a:hover, .button:hover{
   color: red;
-  
+  font-size: 25px;
 }
 
 ul{
@@ -57,19 +101,27 @@ ul{
 }
 
 .grid {
-  margin: 0px 30px 0px 30px;
+  margin: 10px 30px 0px 30px;
   display: column;
   flex-direction: row;
   flex: 1;
-  width: 30vw;
+  width: 40vw;
   overflow: scroll;
   height: 50vw;
   grid-row-gap: 0px;
+  box-shadow: 5px 5px 10px #222;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding-top: 5px;
 }
 
-/* fixme to change the color of rows */
-.row:nth-child(even) {
-  background-color: #DDD;
+h2 {
+  color: white;
+  text-align: center;
+}
+
+span {
+  color: red;
 }
 
 .row {
@@ -79,15 +131,59 @@ ul{
   
 }
 
+.row:nth-child(even) {
+  background-color: #555;
+}
+
 .box {
   overflow-x: scroll;
   overflow: hidden;
   height: 30px;
   display: flex;
   align-items: center;
+  border: solid 1px white;
+  border-radius: 3%;
+  padding: 1px;
 }
 
 .art_small {
   height: 20px;
   width: 20px;
 }
+
+.buttons_holder {
+  display: flex;
+  justify-content: center;
+}
+
+.user_buttons {
+  background-color: #555;
+  box-shadow: #222;
+  margin: 10px;
+  padding: 5px;
+  border: 3px solid #333;
+  border-radius: 5px;
+}
+
+.user_buttons:hover {
+  color: white;
+  font-size: 20px;
+  border-color: red;
+}
+
+.first {
+  background-color: rgb(147, 143, 143);
+  border-bottom: 2px solid white;
+}
+
+@media screen and (max-width: 670px) {
+  .profile_columns{
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .grid{
+    width: 80%;
+  }
+}
+
