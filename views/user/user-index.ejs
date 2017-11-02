@@ -1,6 +1,9 @@
 <% include ../partials/boiler %>
 
 <h2>Welcome, <span><%= user.dj_name %></span></h2>
+<div id='soundcloud_holder'>
+  <iframe width="70%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/34019569&amp;color=0066cc"></iframe>
+</div>
 <h2 style="display: none" id='hidden_user'><%= user.id %></h2>
 <div class='buttons_holder'>
   <a class='user_buttons' href="/user/edit">Edit Profile</a>
@@ -24,6 +27,7 @@
     <% } %>
   </div>
 </div>
+
 
 <script src='/src/main.js'></script>
 <% include ../partials/end %>

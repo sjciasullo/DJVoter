@@ -59,14 +59,14 @@ the songs go on.
 
 ## Wireframes
 ### Menu-> djLogin
-[Menu-> djLogin](./assets/wireframes/main>djlogin.JPG)
-[Menu-> djLogin](./assets/wireframes/main>djlogin+register.JPG)
+![Menu-> djLogin](./assets/wireframes/main>djlogin.JPG)
+![Menu-> djLogin](./assets/wireframes/main>djlogin+register.JPG)
 ### Login>profile
-[login-> profile](./assets/wireframes/djlogin>profile2.JPG)
+![login-> profile](./assets/wireframes/djlogin>profile2.JPG)
 ### Menu-> rooms
-[Menu-> rooms](./assets/wireframes/main>rooms.JPG)
+![Menu-> rooms](./assets/wireframes/main>rooms.JPG)
 ### rooms-> player
-[Menu-> djLogin](./assets/wireframes/rooms>player.JPG)
+![Menu-> djLogin](./assets/wireframes/rooms>player.JPG)
 
 ## Views
 ### partials
