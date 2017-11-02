@@ -51,6 +51,7 @@ function putRowIntoCollection(rowName) {
       user_table.appendChild(newRow);
 
       grabDeleteButtons();
+      grabPlayButtons();
       //this WILL allow for duplicates to be added to user collection
 
       //then will need to implement song router, controller, model for delete and send a delete message on the click of minus button
@@ -107,7 +108,44 @@ function grabDeleteButtons() {
   }
 }
 
+function loadSoundcloudWidget(rowName) {
+ 
+  const rowBoxes = document.getElementsByClassName(`${rowName}`);
+  const uri = rowBoxes[6].innerHTML;
+  const holder = document.getElementById('soundcloud_holder');
+  let currentWidget = document.getElementById('sc_widget');
+
+   //check if there is already a widget there and delete it if it is
+
+  if (currentWidget != null) {
+    holder.removeChild(currentWidget);
+  }
+
+  let widget = document.createElement('iframe');
+  widget.setAttribute('width', '70%');
+  widget.setAttribute('height', '166');
+  widget.setAttribute('scrolling', 'no');
+  widget.setAttribute('frameborder', 'no');
+  widget.setAttribute('id', 'sc_widget');
+
+  const song_source = 'https://w.soundcloud.com/player/?url=' + uri + '&amp;color=0066cc';
+  widget.setAttribute('src', song_source);
+  
+  holder.appendChild(widget);
+  
+}
+
+function grabPlayButtons() {
+  const playButtons = document.querySelectorAll('.play');
+  for(let playButton of playButtons) {
+    playButton.addEventListener('click', () => {
+      return loadSoundcloudWidget(playButton.classList[1]);
+    })
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   grabRowButtons();
   grabDeleteButtons();
+  grabPlayButtons();
 });
