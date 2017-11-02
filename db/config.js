@@ -7,7 +7,7 @@ const options = {
 const pgp = require('pg-promise')(options);
 
 function setDb() {
-  if (process.env.NODE_ENV = 'development' || !process.env.NODE_ENV) {
+  if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
     return pgp({
       database: 'dj_voter',
       port: 5432,
