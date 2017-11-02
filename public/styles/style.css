@@ -110,7 +110,7 @@ ul{
   overflow: scroll;
   height: 50vw;
   grid-row-gap: 0px;
-  box-shadow: 5px 5px 10px #222;
+  box-shadow: 10px 10px 20px #222;
   border: 1px solid #222;
   border-radius: 10px;
   padding-top: 5px;
@@ -130,9 +130,8 @@ span {
 
 .row {
   display: grid;
-  grid-template-columns: auto 30px minmax(60px,60%) minmax(60px,30%) minmax(40px, 10%) ;
+  grid-template-columns: auto 30px minmax(60px,60%) minmax(60px,30%) minmax(50px, 10%) ;
   white-space: nowrap;
-  
 }
 
 .row:nth-child(even) {
@@ -163,7 +162,6 @@ span {
 
 .user_buttons {
   background-color: #555;
-  box-shadow: #222;
   margin: 10px;
   padding: 5px;
   border: 3px solid #333;
