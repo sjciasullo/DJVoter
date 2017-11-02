@@ -2,7 +2,7 @@ console.log('main js is connected!');
 
 function createRowString(artwork_url, song_name, artist_name, genre, sc_url, class_name) {
   return `
-    <div class='box'><button class='delete ${class_name}'>-</button><button class='play ${class_name}'>></button></div>
+    <div class='box'><button class='delete ${class_name}'><i class="fa fa-minus" aria-hidden="true"></button><button class='play ${class_name}'><i class="fa fa-plus" aria-hidden="true"></button></div>
     <div class='box ${class_name}'><img class='art_small' src="${artwork_url}"></div>
     <div class='box ${class_name}'>${song_name}</div>
     <div class='box ${class_name}'>${artist_name}</div>
