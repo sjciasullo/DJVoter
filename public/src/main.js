@@ -35,7 +35,6 @@ function putRowIntoCollection(rowName) {
     .then(json => {
       //all the song data is getting sent back in json.locals.users_song
       //add the song to user's collection
-      console.log('this is the json: ', json);
       const art = body.album_image;
       const song = body.song_name;
       const artist = body.artist_name;
@@ -53,18 +52,11 @@ function putRowIntoCollection(rowName) {
       grabDeleteButtons();
       grabPlayButtons();
       //this WILL allow for duplicates to be added to user collection
-
-      //then will need to implement song router, controller, model for delete and send a delete message on the click of minus button
-      // finally will need to load a sc player upon the play button
-      // for each roe
-    }).catch({
-
+    }).catch(error => {
+      //handle error
     })
 }
 
-//will be able to just add a deleterowfromcollection
-// ISSUE WITH ADDING ROW... WILL NEED A CLASS SPECIFIC
-// FOR EACH SIDE 
 function grabRowButtons() {
   const addButtons = document.querySelectorAll('.add');
   for(let addButton of addButtons) {
@@ -94,9 +86,8 @@ function deleteRowFromCollection(rowName) {
     }
   }).then(res => res.json())
     .then(json => {
-      //do something but this doesn't matter
+      //handle error
     })
-
 }
 
 function grabDeleteButtons() {
@@ -109,18 +100,17 @@ function grabDeleteButtons() {
 }
 
 function loadSoundcloudWidget(rowName) {
- 
   const rowBoxes = document.getElementsByClassName(`${rowName}`);
   const uri = rowBoxes[6].innerHTML;
   const holder = document.getElementById('soundcloud_holder');
   let currentWidget = document.getElementById('sc_widget');
 
    //check if there is already a widget there and delete it if it is
-
   if (currentWidget != null) {
     holder.removeChild(currentWidget);
   }
 
+  //create widget based on soundcloud specs
   let widget = document.createElement('iframe');
   widget.setAttribute('width', '70%');
   widget.setAttribute('height', '166');
@@ -132,7 +122,6 @@ function loadSoundcloudWidget(rowName) {
   widget.setAttribute('src', song_source);
   
   holder.appendChild(widget);
-  
 }
 
 function grabPlayButtons() {
