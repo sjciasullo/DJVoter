@@ -3,11 +3,13 @@
 <div class='row'>
     <div class='box'>
         <% if(className == 'user'){%>
-            <button class='delete <%= className + i %>'>-</button>
+            <button class='delete <%= className + i %>'><i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
         <% } else { %>
-            <button class='add <%= className + i %>'>+</button>
+            <button class='add <%= className + i %>'><i class="fa fa-plus" aria-hidden="true"></i></button>
         <% } %>
-        <button class='play <%= className + i %>'>></button>
+        <button class='play <%= className + i %>'><i class="fa fa-play" aria-hidden="true"></i>
+        </button>
     </div>
     <div class='box <%= className + i %>'><img class='art_small' src="<%= arr[i].album_image %>"></div>
     <div class='box <%= className + i %>'><%= arr[i].song_name %></div>
