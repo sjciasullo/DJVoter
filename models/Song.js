@@ -8,8 +8,8 @@ Song.create = (usersSong) => {
   return db.oneOrNone(
     `
     SELECT * FROM songs
-    WHERE song_name = $1
-    `, [usersSong.song_name]
+    WHERE uri = $1
+    `, [usersSong.audio_url]
     ).then( result => {
       if(!result) {
       return db.one(
@@ -17,7 +17,7 @@ Song.create = (usersSong) => {
         INSERT INTO songs 
         (song_name, artist_name, uri, album_image, genre)
         VALUES ($1, $2, $3, $4, $5)
-        ON CONFLICT (song_name) DO NOTHING 
+        ON CONFLICT (uri) DO NOTHING 
         RETURNING *
         `, [usersSong.song_name, usersSong.artist_name, usersSong.audio_url, usersSong.album_image, usersSong.genre]
       )
