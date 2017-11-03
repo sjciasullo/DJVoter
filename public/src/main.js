@@ -7,7 +7,7 @@ function createRowString(artwork_url, song_name, artist_name, genre, sc_url, cla
         <i class="fa fa-minus" aria-hidden="true"></i>
       </button>
       <button class='play ${class_name}'>
-        <i class="fa fa-plus" aria-hidden="true"></i>
+        <i class="fa fa-play" aria-hidden="true"></i>
       </button>
     </div>
     <div class='box ${class_name}'><img class='art_small' src="${artwork_url}"></div>
