@@ -192,7 +192,8 @@ the songs go on.
 # Demo
 1. navigate to heroku page
 2. register a user with a valid soundcloud name (user has favorited some songs)
-3. sign in
+3. sign in -> default sign in is username: user1, password: admin; associated w my soundcloud
+   account steven-ciasullo
 4. add some songs to collection, delete some songs => reflects playlist like creation 
 of allowing duplicates
 5. press play button to load soundcloud widget
