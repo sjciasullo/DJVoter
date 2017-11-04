@@ -1,8 +1,10 @@
 <% include ../partials/boiler %>
 
 <h2>Edit Profile</h2>
-<a href="/user">User Main</a>
-<a href="/user/create">Create Room</a>
+<div class='buttons_holder'>
+  <a class='user_buttons' href="/user">User Main</a>
+  <a class='user_buttons' href="/user/create">Create Room</a>
+</div>
 
 <div class='auth_form'>
 <form method='POST' action='/user/<%= user.id %>?_method=PUT'>
